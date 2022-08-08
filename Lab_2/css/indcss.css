@@ -1,0 +1,250 @@
+
+header {
+
+    background-color: white;
+    padding: 1% 2%;
+    font-weight: bold;
+    
+
+}
+
+#outh
+{
+	display: table;
+}
+
+@font-face {
+    font-family: "Vollkorn-VariableFont_wght";
+    src: url(../Sorce/Vollkorn-VariableFont_wght.ttf);
+}
+
+
+
+#title
+{
+    
+    display: table-cell;
+    vertical-align: middle;
+}
+
+
+body
+{
+    margin: 0;
+    background-image: url(../Sorce/ger.jpg);
+    font-family: "Vollkorn-VariableFont_wght";
+    
+}
+
+#nav {
+    font-size: large;
+    background-color: #3b3b3b;
+    padding: 1% 2%;
+    margin: 0;
+    /*text-align: center;*/
+    color: white;
+    list-style-type: none;
+    display: block;
+    
+}
+
+nav
+{
+	background-color: #3b3b3b;
+}
+
+
+#nav li
+{
+    display: inline;
+}
+
+
+
+#nav a 
+{
+    border: 1px solid #3b3b3b;
+    padding: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    color: white;
+    display: inline-block;
+    
+}
+
+
+#nav ul
+{
+    display: none;
+    list-style-type: none;
+    position: absolute;
+    left: 4.5%;
+    
+}
+#nav ul li
+{
+    background-color: #3b3b3b;
+
+    float:none;
+	display:list-item;
+	position: relative;
+}
+
+#nav li:hover ul
+{
+    display:block;
+
+}
+
+#nav a:hover
+{
+    border-color: rgb(4, 138, 228); 
+}
+
+.active
+{
+    width: 540px;
+    height: 540px;
+    z-index: 1000;
+}
+
+#ved 
+{
+    font-size: 20px;
+}
+
+#ved li a
+{
+    text-decoration: none;
+    color: black;
+}
+
+#ved li a:hover
+{
+    color: orange;
+}
+article
+{
+    width: 80%;
+    background-color: white;
+    margin: 0 auto;
+    padding: 1% 2%;
+    padding-bottom: 5%;
+    display: block;
+    overflow: hidden;
+}
+
+article figure
+{
+    float: left;
+    text-align: center;
+    margin: 0 5%;
+    
+}
+
+
+footer
+{
+    background-color: #3b3b3b;
+    color: white;
+    padding: 1% 2%;
+    font-family: "Vollkorn-VariableFont_wght";
+    font-size: large;
+
+}
+
+
+.figcent
+{
+    float: none;
+    margin: 0 auto;
+}
+
+/* form1 Форма для датчика */
+#form1
+{
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 2%;
+    border-bottom: 3px solid black;
+    border-top: 3px solid black;
+}
+
+#form1 select
+{
+    cursor: pointer;
+            display: inline-block;
+            font-weight: 20;
+            font-size: 14px;
+            padding: 10px 50px;
+            border-radius: 3px;
+            transition: 0.2s;
+            margin-right: 10px;
+            background: #3b3b3b;
+            color: white;
+}
+
+#form1 #but11
+{
+    margin-top: 2%;
+    display: block;
+}
+
+#but1
+{
+    display: inline-block;
+    border: 2px solid black;
+    border-radius: 10px;
+    padding: 1% 1%;
+    margin-bottom: 2%;
+}
+
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 768px) 
+{
+
+#nav li
+{
+	display: block;
+	border: 1px solid #3b3b3b;
+	text-align:center;
+}
+	
+#nav a:hover
+{
+    border-color: #3b3b3b; 
+}
+
+#nav li:hover
+{
+    border-color: rgb(4, 138, 228); 
+}
+
+#nav ul
+{
+    position: inherit;  	  
+}
+
+
+article figure   
+{
+    float: none;
+    margin: 0 10%;
+    width: 80%;
+}
+
+figure img 
+{
+    width: 100%;
+    height: 100%;
+}
+   
+}

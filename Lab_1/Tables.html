@@ -1,0 +1,189 @@
+<html>
+<head>
+    <title>Медицинский коллектив</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="./CSS/Indcss.css">
+    <link href="https://fonts.googleapis.com/css?family=Vollkorn&display=swap" rel="stylesheet">
+    <script src="jsind.js"></script>
+    <?php 
+        include "install.php";
+    ?>
+
+    
+
+    <style>
+
+        #sitebody
+        {
+            height: 2300px;
+            width: 85%;
+            background-color: white;
+            margin: 0 auto;
+        }
+
+        #sitebody div 
+        {
+            height: 95%;
+            width: 90%;
+            margin: 3% 4.5%;
+            border: 4px solid black;
+            display: inline-block;
+            font-family: 'Vollkorn', serif;
+            border-radius: 20px; 
+
+        }
+
+        #sitebody div img
+        {
+            width: 25%;
+            height: 15%;
+            margin-left: 15%;
+            margin-top: 40px;
+            background-color: rgb(222, 215, 215);
+            padding: 14px;
+            margin-right: 20px;
+            float: left;
+        }
+
+        #sitebody div p
+        {
+            white-space: pre-wrap;
+            font-size: 1.2vw;
+            width: 80%;
+            margin-left: 10%;
+        }
+
+        #sitebody div ul
+        {
+            font-size: 1.2vw;
+            width: 80%;
+            margin-left: 10%;
+            font-family: 'Vollkorn', serif;
+        }
+
+        #sitebody div #Down
+        {
+            width: 85%;
+            height: 26%;
+            margin-left: 7%;
+            margin-top: 40px;
+            background-color: white;
+            padding: 14px;
+            display: inline-block;
+        }
+        
+        #sitebody div .MySQLTl
+        {
+            all: initial;
+            display: inline-block;
+            margin: 2%;
+            padding: 4px;
+            border: 2px solid transparent;
+            border-radius: 8px;
+            
+        }
+
+
+        #sitebody div .MySQLTl:hover
+        {
+            border-color: orange;
+        }
+
+        #sitebody div .MySQLT .ttr:hover
+        {
+            background: orange;
+        }
+
+        #sitebody div .MySQLT .activeR
+        {
+            background: orangered;
+        }
+    
+        #sitebody div .MySQLTl:active
+        {
+            border-width: 6px;
+            border-color: orangered;
+        }
+
+        #dial {
+            display: none;
+            position: fixed;
+            background-color: white;
+            width: 20%;
+            z-index:1002;
+            margin: 30% 40%;
+            border-radius: 6px;
+            border: 4px solid black; 
+        }
+
+        .close-btn {
+            width: 31px;
+            height: 31px;
+            display: block;
+            cursor: pointer;
+            background: url(../CSS/close.png);
+            text-indent: -4999px;
+        }
+
+        .close-btn:hover{
+            background: url(../CSS/close-hover.png);
+        }
+
+        #sitebody div .active
+        {
+            border-width: 4px;
+            border-color: orangered;
+        }
+
+
+
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <div class="hed">Медицинский коллектив</div>
+
+            <ul id="ull" class="hed">
+                    <li><a href="index.html">Главная</a></li>
+        
+                    <li><a href="Tables.html">Таблицы</a></li>
+        
+                    <li><a href="Regvest.html">Запросы</a></li>
+            </ul>
+    </header>
+
+    <div id="dial">
+        <a class="close-btn" href="javascript:void(0)" onclick = "CloseModForm()">Закрыть</a>
+        
+        <p>Выберите действие</p>
+        <div id="divbutton">
+            <input type="button" name="AddT" class="but" value="Добавить" id="AddT" onclick="CreateForm('Добавить');">
+            <input type="button" name="chanche" class="but" value="Изменить" id="chanche" onclick="CreateForm('Изменить');">
+            <input type="button" name="DelT" class="but" value="Удалить" id="DelT" onclick="CreateForm('Удалить');">
+        </div> 
+    </div>
+
+
+    
+
+
+    <div id="sitebody">
+
+        <div>
+
+            
+            <?php
+                MainT();
+            ?>
+            
+        </div>
+    
+    </div>
+
+
+    
+</body>
+
+</html>

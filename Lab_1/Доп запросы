@@ -1,0 +1,4 @@
+1. DELETE FROM Pacients WHERE NOT EXISTS (SELECT * FROM Priem WHERE Pacients.id = Priem.id_pac)
+2.SELECT * FROM `Diagnoz` WHERE title LIKE "_е%" OR title LIKE "%уха"
+UPDATE Diagnoz SET title=CONCAT(title, "шис") WHERE title LIKE "_е%"
+UPDATE Diagnoz SET title=REPLACE(title, "уха", "ания") WHERE title LIKE "%уха"

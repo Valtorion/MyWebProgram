@@ -1,0 +1,202 @@
+<html>
+<head>
+    <title>Медицинский коллектив</title>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <link rel="stylesheet" href="CSS/Indcss.css">
+    <link href="https://fonts.googleapis.com/css?family=Vollkorn&display=swap" rel="stylesheet">
+    
+
+    <style>
+        #sitebody
+        {
+            height: 2300px;
+            width: 80%;
+            background-color: white;
+            margin: 0 auto;
+        }
+
+        #sitebody div 
+        {
+            height: 95%;
+            width: 90%;
+            margin: 3% 4.5%;
+            border: 4px solid black;
+            display: inline-block;
+            font-family: 'Vollkorn', serif;
+            border-radius: 20px; 
+
+        }
+
+        #sitebody div img
+        {
+            width: 25%;
+            height: 15%;
+            margin-left: 15%;
+            margin-top: 40px;
+            background-color: rgb(222, 215, 215);
+            padding: 14px;
+            margin-right: 20px;
+            float: left;
+        }
+
+        #sitebody div p
+        {
+            white-space: pre-wrap;
+            font-size: 1.2vw;
+            width: 80%;
+            margin-left: 10%;
+        }
+
+        #sitebody div ul
+        {
+            font-size: 1.2vw;
+            width: 80%;
+            margin-left: 10%;
+            font-family: 'Vollkorn', serif;
+        }
+
+        #sitebody div #Down
+        {
+            width: 85%;
+            height: 26%;
+            margin-left: 7%;
+            margin-top: 40px;
+            background-color: white;
+            padding: 14px;
+            display: inline-block;
+        }
+
+        #sitebody div .MySQLTl
+        {
+            all: initial;
+            display: inline-block;
+            margin: 2%;
+        }
+
+
+        #sitebody div #form
+        {
+            all: initial;
+            display: inline-block;
+            margin: 2%;
+            padding: 4px;
+            
+        }
+
+        
+    
+    </style>
+
+</head>
+
+<body>
+    <header>
+        <div class="hed">Медицинский коллектив</div>
+
+            <ul id="ull" class="hed">
+                    <li><a href="index.html">Главная</a></li>
+        
+                    <li><a href="Tables.html">Таблицы</a></li>
+        
+                    <li><a href="Regvest.html">Запросы</a></li>
+            </ul>
+    </header>
+
+    <div id="sitebody">
+
+        <div>
+
+            <div id="form">
+                <?php 
+                    include "change.php";
+                ?>
+            </div>            
+        </div>
+    
+    </div>
+
+<script>
+
+function SendForm()
+{
+    let formelem = document.getElementById("form").childNodes[1];
+    let nametable = formelem.getAttribute("id");
+    let param = [];
+    let action = formelem.childNodes[0].textContent;
+    
+    action = action.substr(0, action.indexOf(" "));
+    
+
+    let selindex;
+
+    for (let i = 0;i < formelem.childNodes.length;i++)
+    {
+        
+        if (formelem.childNodes[i].nodeName == "SELECT")
+        {
+            
+            selindex = formelem.childNodes[i].options.selectedIndex;
+            if (selindex == 0)
+            {
+                alert(formelem.childNodes[i].options[selindex].textContent);
+                return;
+            }
+            param.push(formelem.childNodes[i].options[selindex].getAttribute("id"));
+        }
+
+        
+    
+        if (formelem.childNodes[i].nodeName == "INPUT" && formelem.childNodes[i].getAttribute("type") == "text")
+        {
+            if (formelem.childNodes[i].value == "")
+            {
+                alert("Заполните поле");
+                return;
+            }
+            
+            param.push(formelem.childNodes[i].value);
+            
+        }
+
+        if (formelem.childNodes[i].nodeName == "INPUT" && formelem.childNodes[i].getAttribute("type") == "date")
+        {
+            if (formelem.childNodes[i].value == "")
+            {
+                alert("Выберите дату");
+                return;
+            }
+
+            param.push(formelem.childNodes[i].value);
+        }
+
+
+    }
+
+    
+    let post = new XMLHttpRequest();
+    let body = "nametable=" + nametable;
+
+    for (let i = 0;i < param.length;i++)
+    {
+        body += "&param[]=" + param[i];
+    }
+
+    body += "&id=" + formelem.getAttribute("name");
+    body += "&action=" + action;
+    
+    post.open("GET", 'http://lab3.ru/phpsend.php?' + body, true);
+    post.send(body);
+
+    
+
+    document.location.href = 'http://lab3.ru/phpsend.php?' + body;
+    
+
+
+}
+
+</script>
+
+</body>
+
+</html>

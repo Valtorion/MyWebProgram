@@ -1,0 +1,116 @@
+        #sitebody
+        {
+            height: 2300px;
+            width: 80%;
+            background-color: white;
+            margin: 0 auto;
+        }
+
+        #sitebody div 
+        {
+            height: auto;
+            width: 90%;
+            margin: 3% 4.5%;
+            border: 4px solid black;
+            display: inline-block;
+            font-family: 'Vollkorn', serif;
+            border-radius: 20px;
+            padding-bottom: 40px;
+
+        }
+
+        #Test
+        {
+            margin: 0 auto;
+            width: 90%; 
+            margin-top: 5%;
+            font-size: 28px;
+            text-align: center;
+        }
+
+        #Dvar 
+        {
+            margin-top: 5%;    
+        }
+
+        #Dvar li
+        {
+            display: inline;
+            margin-right: 20px;
+        }
+
+        #sitebody #ButDiv
+        {
+            text-align: center;
+            border: 0px;
+        }
+
+        .var
+        {
+            transform: scale(1.5);
+            margin-right: 10px;
+        }
+
+        .but
+        {
+            cursor: pointer;
+            display: inline-block;
+            font-weight: 700;
+            font-size: 26px;
+            color: white;
+            padding: 10px 50px;
+            border-radius: 3px;
+            background: rgb(64,199,129);
+            box-shadow: 0 -3px rgb(53,167,110) inset;
+            transition: 0.2s;
+            margin-top: 2%;
+            margin-right: 10px;
+        }
+
+
+        .but:hover
+        {
+            background: rgb(53, 167, 110); 
+        }
+
+        .but:active
+        {
+            background: rgb(33,147,90);
+            box-shadow: 0 3px rgb(33,147,90) inset;
+        }
+
+
+        #sitebody #dots
+        {
+            margin-top: 5%;
+            background-color: white;
+            border: 0px;
+            
+        }
+
+        .dot
+        {
+            cursor: pointer;
+            height: 43px;
+            width: 43px;
+            margin: 0 2px;
+            background-color: #bbbbbb;
+            border-radius: 50%;
+            display: inline-block;
+            transition: background-color 0.6s ease;
+            margin-left: 5%;
+        }
+
+
+        .active, .dot:hover
+        {
+            background-color: #f90;
+        }
+
+        #sitebody #listQ
+        {
+            text-align: left;
+            margin-top: 20px;
+        }
+
+
